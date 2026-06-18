@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - VetCart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="{{ url_for('home') }}" class="logo">VetCart</a>
+    </div>
+    <nav class="main-nav">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('products') }}">Products</a>
+      <a href="{{ url_for('payment') }}">Payment</a>
+    </nav>
+  </header>
+
+  <section class="cart-section">
+    <div class="section-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Your Cart</h2>
+        <button id="clearCartBtn" class="clear-cart-button">Clear All</button>
+      </div>
+    </div>
+    <div id="cartItems" class="cart-items"></div>     <div id="dailyCostCalculator" class="daily-cost-calculator" style="display: none;">
+       <h3>Daily Cost Calculator</h3>
+       <p>Select daily consumption amount:</p>
+       <div class="calculator-presets">
+         <button class="preset-btn" data-grams="25">25g/day</button>
+         <button class="preset-btn" data-grams="50">50g/day</button>
+         <button class="preset-btn" data-grams="75">75g/day</button>
+         <button class="preset-btn" data-grams="100">100g/day</button>
+         <button class="preset-btn" data-grams="150">150g/day</button>
+         <button class="preset-btn" data-grams="200">200g/day</button>
+       </div>
+       <div class="calculator-results" id="calculatorResults"></div>
+     </div>    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">0.00</span>
+      </div>
+      <div class="summary-row">
+        <span id="cartGstLabel">GST (%):</span>
+        <span id="cartGST">0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Total weight:</span>
+        <span id="cartTotalWeight">—</span>
+      </div>
+      <div class="summary-row">
+        <span>Price/gram:</span>
+        <span id="cartPricePerGram">—</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total:</span>
+        <span id="cartTotal">0.00</span>
+      </div>
+      <a class="checkout-button" href="{{ url_for('payment') }}">Proceed to Payment</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 VetCart Veterinary Store. All Rights Reserved.</p>
+  </footer>
+
+  <script defer src="{{ url_for('static', filename='script.js') }}?v=2"></script>
+</body>
+</html>

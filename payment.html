@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment - VetCart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="{{ url_for('home') }}" class="logo">VetCart</a>
+    </div>
+    <nav class="main-nav">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('products') }}">Products</a>
+      <a href="{{ url_for('cart') }}">Cart</a>
+    </nav>
+  </header>
+
+  <section class="payment-section">
+    <div class="section-header">
+      <h2>Payment</h2>
+      <p>This is a demo payment page. In a real app, integrate with payment processing.</p>
+    </div>
+    <div class="payment-card">
+      <h3>Payment Details</h3>
+      <p>Checkout is demo-only.</p>
+      <button class="checkout-button">Confirm Order</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 VetCart Veterinary Store. All Rights Reserved.</p>
+  </footer>
+
+  <script defer src="{{ url_for('static', filename='script.js') }}?v=2"></script>
+</body>
+</html>

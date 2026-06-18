@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VetCart - Veterinary Store</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">VetCart</span>
+      <span class="tagline">Trusted pet wellness delivered.</span>
+    </div>
+    <div class="search-bar">
+      <input id="searchInput" type="search" placeholder="Search pet care, medicine, and supplies" />
+      <button type="button" id="searchButton">Search</button>
+    </div>
+    <div class="nav-actions">
+      <a href="{{ url_for('cart') }}" class="cart-link">Cart (<span id="cartCount">0</span>)</a>
+    </div>
+  </header>
+
+  <div id="jsStatus" class="js-status">JavaScript status: loading...</div>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Shop everything in one place</h1>
+      <p>Experience trusted pet care products and veterinary solutions in one store.</p>
+      <a href="{{ url_for('products') }}" class="hero-button">Shop Now</a>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <section class="featured-section">
+    <h2>Popular categories</h2>
+    <div id="categoryGrid" class="category-grid">
+      <div class="category-card" data-category="Pet Nutrition">Pet Nutrition</div>
+      <div class="category-card" data-category="Vet Medicine">Vet Medicine</div>
+      <div class="category-card" data-category="Accessories">Accessories</div>
+      <div class="category-card" data-category="Health & Wellness">Health & Wellness</div>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="section-header">
+      <h2>Featured veterinary products</h2>
+      <p>Shop vet-approved essentials for pets, from care kits to nutrition.</p>
+    </div>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+
+  <section class="info-strip">
+    <div>
+      <strong>Free delivery</strong>
+      <p>On orders over ₹5000</p>
+    </div>
+    <div>
+      <strong>Vet-approved care</strong>
+      <p>Trusted products for pets.</p>
+    </div>
+    <div>
+      <strong>24/7 support</strong>
+      <p>Help for every pet owner.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 VetCart Veterinary Store. All Rights Reserved.</p>
+  </footer>
+
+  <script defer src="{{ url_for('static', filename='script.js') }}?v=2"></script>
+</body>
+</html>
